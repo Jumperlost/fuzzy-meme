@@ -1,0 +1,54 @@
+.welcom-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url(/img/FMX.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
+  .third-page {
+    width: 100%;
+    .table {
+      width: fit-content;
+    }
+  }
+  .firstpage {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+
+    .link-warning {
+      text-decoration: none;
+      background-color: var(--bs-green);
+      text-transform: uppercase;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+    .wrapper-menu {
+      padding-top: 25%;
+      padding-bottom: 25%;
+      display: none;
+      padding: 70% 25%;
+    }
+  }
+}
+
+label {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--bs-warning);
+  padding-bottom: 2.5%;
+}
+
+.mx-auto {
+  margin-top: 10%;
+}
+
+table tr td,
+table tr th {
+  background-color: rgba($color: #aea4a4, $alpha: 0.4) !important;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FMX</title>
+    <link rel="stylesheet" href="./style/css.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="welcom-menu">
+      <div class="firstpage">
+        <p>
+          <button
+            onclick="myFunction()"
+            id="firstAction"
+            href="##"
+            class="btn btn-danger btn-lg"
+          >
+            start
+          </button>
+        </p>
+        <div id="secondpage" class="wrapper-menu">
+          <label for="participants">Participant</label>
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            id="participants"
+          >
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+
+          <label for="juries">The number of the jury</label>
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            id="juries"
+          >
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+
+          <label for="maxPoints">Maximum number of points</label>
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            id="maxPoints"
+          >
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+
+          <div class="mx-auto">
+            <button
+              class="btn btn-danger"
+              type="button"
+              onclick="createDynamicForm()"
+            >
+              Button
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="third-page" id="thirdpage"></div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/b47530400e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/masterJS.js"></script>
+  </body>
+</html>

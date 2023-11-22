@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.welcom-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url(/img/FMX.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
+}
+.welcom-menu .third-page {
+  width: 100%;
+}
+.welcom-menu .third-page .table {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.welcom-menu .firstpage {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+}
+.welcom-menu .firstpage .link-warning {
+  text-decoration: none;
+  background-color: var(--bs-green);
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.welcom-menu .firstpage .wrapper-menu {
+  padding-top: 25%;
+  padding-bottom: 25%;
+  display: none;
+  padding: 70% 25%;
+}
+
+label {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--bs-warning);
+  padding-bottom: 2.5%;
+}
+
+.mx-auto {
+  margin-top: 10%;
+}
+
+table tr td,
+table tr th {
+  background-color: rgba(174, 164, 164, 0.4) !important;
+}/*# sourceMappingURL=css.css.map */
