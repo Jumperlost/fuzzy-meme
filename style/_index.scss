@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: url(/img/FMX.jpeg);
+  background: url(../images/back.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -11,8 +11,8 @@
   overflow: hidden;
   .third-page {
     width: 100%;
-    .table {
-      width: fit-content;
+    .table-responsive-sm {
+      margin-right: 5%;
     }
   }
   .firstpage {
@@ -51,4 +51,14 @@ label {
 table tr td,
 table tr th {
   background-color: rgba($color: #aea4a4, $alpha: 0.4) !important;
+}
+
+.display-3 {
+  color: var(--bs-green);
+  text-transform: uppercase;
+  background-color: rgba($color: #aea4a4, $alpha: 0.6) !important;
+}
+
+.total-rating {
+  color: var(--bs-danger);
 }
