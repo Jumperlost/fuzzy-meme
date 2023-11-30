@@ -1,3 +1,7 @@
+// .table > :not(caption) > * > * {
+//   border: 2px solid gray;
+// }
+
 .welcom-menu {
   display: flex;
   align-items: center;
@@ -8,12 +12,9 @@
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
-  overflow: hidden;
+
   .third-page {
     width: 100%;
-    .table-responsive-sm {
-      margin-right: 5%;
-    }
   }
   .firstpage {
     display: flex;
@@ -23,25 +24,31 @@
 
     .link-warning {
       text-decoration: none;
-      background-color: var(--bs-green);
+      color: var(--bs-green);
       text-transform: uppercase;
       padding: 10px 20px;
       border-radius: 5px;
     }
     .wrapper-menu {
-      padding-top: 25%;
-      padding-bottom: 25%;
       display: none;
-      padding: 70% 25%;
+      margin-left: 40%;
+      width: 25%;
+      // margin: 40% 40%;
+      padding: 1% 1%;
+      background-color: rgba($color: #dccfcf, $alpha: 0.8) !important;
+      border-radius: 20px;
     }
   }
 }
-
+input.jury {
+  width: 130px;
+}
 label {
   font-size: 22px;
   font-weight: 700;
-  color: var(--bs-warning);
+  color: #000092;
   padding-bottom: 2.5%;
+  margin-top: 8px;
 }
 
 .mx-auto {
@@ -50,15 +57,66 @@ label {
 
 table tr td,
 table tr th {
-  background-color: rgba($color: #aea4a4, $alpha: 0.4) !important;
+  width: 100px;
+  background-color: rgba($color: #aea4a4, $alpha: 0) !important;
 }
 
 .display-3 {
-  color: var(--bs-green);
+  color: #000092;
   text-transform: uppercase;
-  background-color: rgba($color: #aea4a4, $alpha: 0.6) !important;
 }
 
+.total-point,
 .total-rating {
-  color: var(--bs-danger);
+  display: block;
+  margin: 0 auto;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000092;
+  width: 50px;
+}
+
+tbody {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  tr {
+    td {
+      width: 200px;
+    }
+  }
+}
+.wrapper-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  background-color: rgba($color: #dccfcf, $alpha: 0.8) !important;
+  border-radius: 20px;
+  padding: 1% 1%;
+}
+
+.table-success {
+  display: flex;
+  flex-direction: column;
+}
+
+.pointinputs {
+  width: 60px;
+}
+
+.row-bl {
+  display: flex;
+  justify-content: center;
+  .empty-block {
+    width: 185px;
+  }
+  th {
+    width: 200px;
+  }
+}
+
+.btn-danger {
+  text-transform: uppercase;
 }
