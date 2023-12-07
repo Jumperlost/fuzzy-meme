@@ -130,25 +130,29 @@ table {
   border-spacing: 0;
 }
 
-.welcom-menu {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+body {
   background: url(../images/back.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.welcom-menu {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   height: 100vh;
 }
 .welcom-menu .third-page {
   width: 100%;
 }
 .welcom-menu .firstpage {
-  display: flex;
-  flex-direction: column;
+  margin: 0 auto;
   text-align: center;
   width: 100%;
+}
+.welcom-menu .firstpage p .btn-first {
+  margin-top: 35%;
 }
 .welcom-menu .firstpage .link-warning {
   text-decoration: none;
@@ -159,9 +163,6 @@ table {
 }
 .welcom-menu .firstpage .wrapper-menu {
   display: none;
-  margin-left: 40%;
-  width: 25%;
-  padding: 1% 1%;
   background-color: rgba(220, 207, 207, 0.8) !important;
   border-radius: 20px;
 }
@@ -179,7 +180,8 @@ label {
 }
 
 .mx-auto {
-  margin-top: 10%;
+  margin-top: 3%;
+  padding-bottom: 3%;
 }
 
 table tr td,
@@ -213,8 +215,6 @@ tbody tr td {
 }
 
 .wrapper-table {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   visibility: hidden;
@@ -245,4 +245,13 @@ tbody tr td {
 
 .btn-danger {
   text-transform: uppercase;
+}
+
+select {
+  padding: 20%;
+}
+
+.edit-width {
+  margin: 0 auto;
+  width: 30% !important;
 }/*# sourceMappingURL=style.css.map */

@@ -1,26 +1,31 @@
 // .table > :not(caption) > * > * {
 //   border: 2px solid gray;
 // }
-
-.welcom-menu {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+body {
   background: url(../images/back.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.welcom-menu {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   height: 100vh;
 
   .third-page {
     width: 100%;
   }
   .firstpage {
-    display: flex;
-    flex-direction: column;
+    margin: 0 auto;
     text-align: center;
     width: 100%;
+    p {
+      .btn-first {
+        margin-top: 35%;
+      }
+    }
 
     .link-warning {
       text-decoration: none;
@@ -31,10 +36,7 @@
     }
     .wrapper-menu {
       display: none;
-      margin-left: 40%;
-      width: 25%;
       // margin: 40% 40%;
-      padding: 1% 1%;
       background-color: rgba($color: #dccfcf, $alpha: 0.8) !important;
       border-radius: 20px;
     }
@@ -52,7 +54,8 @@ label {
 }
 
 .mx-auto {
-  margin-top: 10%;
+  margin-top: 3%;
+  padding-bottom: 3%;
 }
 
 table tr td,
@@ -87,8 +90,6 @@ tbody {
   }
 }
 .wrapper-table {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   visibility: hidden;
@@ -119,4 +120,13 @@ tbody {
 
 .btn-danger {
   text-transform: uppercase;
+}
+
+select {
+  padding: 20%;
+}
+
+.edit-width {
+  margin: 0 auto;
+  width: 30% !important;
 }

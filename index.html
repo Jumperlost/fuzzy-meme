@@ -14,21 +14,21 @@
   </head>
   <body>
     <div class="welcom-menu">
-      <div class="firstpage">
-        <p>
+      <div class="firstpage container">
+        <p class="lead">
           <button
             onclick="myFunction()"
             id="firstAction"
             href="##"
-            class="btn btn-danger btn-lg"
+            class="btn btn-first btn-danger btn-lg"
           >
             <strong>start</strong>
           </button>
         </p>
-        <div id="secondpage" class="wrapper-menu">
-          <label for="participants">Participant</label>
+        <div id="secondpage" class="wrapper-menu container">
+          <label class="fs-4" for="participants">Participant</label>
           <select
-            class="form-select"
+            class="form-select edit-width"
             aria-label="Default select example"
             id="participants"
           >
@@ -43,9 +43,9 @@
             <option value="9">9</option>
             <option value="10">10</option>
           </select>
-          <label for="juries">Jury</label>
+          <label class="fs-4" for="juries">Jury</label>
           <select
-            class="form-select"
+            class="form-select edit-width"
             aria-label="Default select example"
             id="juries"
           >
@@ -55,18 +55,15 @@
             <option value="4">4</option>
             <option value="5">5</option>
           </select>
-          <label for="maxPoints">Maximum number of points</label>
-          <div class="input-group mb-3">
+          <label class="fs-4" for="maxPoints">Maximum number of points</label>
+          <div class="input-group mb-3 edit-width">
             <input
-              value="10"
-              max="100"
-              min="0"
-              type="number"
+              type="text"
               class="form-control"
               aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-default"
               id="maxPoints"
-              step="10"
+              oninput="updateArrayFromInput()"
             />
           </div>
           <div class="mx-auto">

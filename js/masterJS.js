@@ -14,20 +14,23 @@ function createDynamicForm() {
   const participants = document.getElementById("participants").value;
   const juries = document.getElementById("juries").value;
   const dynamicFormContainer = document.getElementById("thirdpage");
-  // MAX NUMBER INPUT
+  //Points
   const elem = document.getElementById("maxPoints").value;
+
   //
   dynamicFormContainer.innerHTML = "";
   secondAction.style.display = "none";
 
-  let dynamicFormHTML = '<div class="table-responsive-sm">';
-  dynamicFormHTML += '<table class="table table-sm table-borderless">';
+  let dynamicFormHTML = '<div class="table-responsive">';
+  dynamicFormHTML += '<table class="table-striped table-sm table-borderless">';
   dynamicFormHTML +=
     "<thead><h1 class='display-3'><strong>leaderbord</strong></h1>";
   dynamicFormHTML += "<tr class='row-bl'>";
   dynamicFormHTML += '<th class="empty-block" scope="col"> </th>';
   for (let h = 0; h < juries; h++) {
-    dynamicFormHTML += `<th><input class="jury"  type="text" placeholder="Name of the jury"></th>`;
+    dynamicFormHTML += `<th><input class="jury"  type="text" value="jury ${
+      h + 1
+    }" placeholder=""></th>`;
   }
   dynamicFormHTML +=
     '<th style =  class="total-point table-active"  scope="col"><strong>Total points</strong></th>';
@@ -36,7 +39,9 @@ function createDynamicForm() {
   dynamicFormHTML += "<tbody class='vertical-align: middle'>";
   for (let i = 0; i < participants; i++) {
     dynamicFormHTML += "<tr>";
-    dynamicFormHTML += `<td><input class="participant-bl" id="participant${i}" type="text" placeholder="Participant name"></td>`;
+    dynamicFormHTML += `<td><input class="participant-bl" id="participant${i}" type="text" value="participant ${
+      i + 1
+    }"></td>`;
     for (let b = 0; b < juries; b++) {
       dynamicFormHTML += `<td><input class="pointinputs" step="1" id="point${i}_${b}" min="0" max="${elem}" type="number" placeholder=""></td>`;
     }
