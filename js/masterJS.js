@@ -7,78 +7,83 @@ function myFunction() {
   firstAction.style.display = "none";
   secondAction.style.display = "block";
 }
+
 //Generations TABLE
 function createDynamicForm() {
-  firstPage.style.width = "0";
-  visibilityBlock.style.visibility = "visible";
-  const participants = document.getElementById("participants").value;
-  const juries = document.getElementById("juries").value;
-  const dynamicFormContainer = document.getElementById("thirdpage");
-  //Points
-  const elem = document.getElementById("maxPoints").value;
-
-  //
-  dynamicFormContainer.innerHTML = "";
-  secondAction.style.display = "none";
-
-  let dynamicFormHTML = '<div class="table-responsive">';
-  dynamicFormHTML += '<table class="table-striped table-sm table-borderless">';
-  dynamicFormHTML +=
-    "<thead><h1 class='display-3'><strong>leaderbord</strong></h1>";
-  dynamicFormHTML += "<tr class='row-bl'>";
-  dynamicFormHTML += '<th class="empty-block" scope="col"> </th>';
-  for (let h = 0; h < juries; h++) {
-    dynamicFormHTML += `<th><input class="jury"  type="text" value="jury ${
-      h + 1
-    }" placeholder=""></th>`;
-  }
-  dynamicFormHTML +=
-    '<th style =  class="total-point table-active"  scope="col"><strong>Total points</strong></th>';
-  dynamicFormHTML += "</tr>";
-  dynamicFormHTML += "</thead>";
-  dynamicFormHTML += "<tbody class='vertical-align: middle'>";
-  for (let i = 0; i < participants; i++) {
-    dynamicFormHTML += "<tr>";
-    dynamicFormHTML += `<td><input class="participant-bl" id="participant${i}" type="text" value="participant ${
-      i + 1
-    }"></td>`;
-    for (let b = 0; b < juries; b++) {
-      dynamicFormHTML += `<td><input class="pointinputs" step="1" id="point${i}_${b}" min="0" max="${elem}" type="number" placeholder=""></td>`;
+  const inputArray = [];
+  let optionsHtml = "";
+  const inputObj = document.getElementById("maxPoints").value;
+  if (inputObj.trim() != "") {
+    inputArray.push(...inputObj.split(","));
+    for (let i = 0; i < inputArray.length; i++) {
+      optionsHtml += `<option value="${inputArray[i].trim()}">${inputArray[
+        i
+      ].trim()}</option>`;
     }
-    dynamicFormHTML += `<td><span class="total-rating" id="totalScoreRow${i}">0</span></td>`;
+    firstPage.style.width = "0";
+    visibilityBlock.style.visibility = "visible";
+    const participants = document.getElementById("participants").value;
+    const juries = document.getElementById("juries").value;
+    const dynamicFormContainer = document.getElementById("thirdpage");
+    //Points
+    secondAction.style.display = "none";
+    dynamicFormContainer.innerHTML = "";
+    let dynamicFormHTML = '<div class="table-responsive">';
+    dynamicFormHTML +=
+      '<table class="table-striped table-sm table-borderless">';
+    dynamicFormHTML +=
+      "<thead><h1 class='display-3'><strong>leaderbord</strong></h1>";
+    dynamicFormHTML += "<tr class='row-bl'>";
+    dynamicFormHTML += '<th class="empty-block" scope="col"> </th>';
+    for (let h = 0; h < juries; h++) {
+      dynamicFormHTML += `<th><input class="jury"  type="text" value="jury ${
+        h + 1
+      }" placeholder=""></th>`;
+    }
+    dynamicFormHTML +=
+      '<th style =  class="total-point table-active"  scope="col"><strong>Total points</strong></th>';
     dynamicFormHTML += "</tr>";
-  }
-  dynamicFormHTML += "</tbody>";
-  dynamicFormHTML += "</table>";
-  dynamicFormHTML += "</div>";
-  dynamicFormContainer.innerHTML = dynamicFormHTML;
-
-  // AUTO SUM POINTS
-  function pointChange() {
+    dynamicFormHTML += "</thead>";
+    dynamicFormHTML += "<tbody class='vertical-align: middle'>";
     for (let i = 0; i < participants; i++) {
-      const arrPoints = [];
-      for (let j = 0; j < juries; j++) {
-        const pointInput = document.getElementById(`point${i}_${j}`);
-        arrPoints.push(Number(pointInput.value) || 0);
+      dynamicFormHTML += "<tr>";
+      dynamicFormHTML += `<td><input class="participant-bl" type="text" value="participant ${
+        i + 1
+      }"></td>`;
+      for (let b = 0; b < juries; b++) {
+        dynamicFormHTML += `<td><select class="form-select"  aria-label="Sizing example"><option value="0">0</option>${optionsHtml}
+        </select></td>`;
       }
+      dynamicFormHTML += `<td>0</td>`;
+      dynamicFormHTML += "</tr>";
+    }
+    dynamicFormHTML += "</tbody>";
+    dynamicFormHTML += "</table>";
+    dynamicFormHTML += "</div>";
+    dynamicFormContainer.innerHTML = dynamicFormHTML;
 
-      const totalScoreRow = document.getElementById(`totalScoreRow${i}`);
-      totalScoreRow.innerHTML = `${arrPoints.reduce((a, b) => a + b, 0)}`;
-    }
-  }
-  for (let i = 0; i < participants; i++) {
-    for (let j = 0; j < juries; j++) {
-      const pointInput = document.getElementById(`point${i}_${j}`);
-      pointInput.addEventListener("input", pointChange);
-    }
+    // AUTO SUM POINTS
+    document.querySelectorAll("tbody tr").forEach((tr) => {
+      tr.addEventListener("change", function (e) {
+        let basicCount = 0;
+        e.target
+          .closest("tr")
+          .querySelectorAll("td select")
+          .forEach((sel) => {
+            basicCount += +sel.value;
+          });
+        e.target
+          .closest("tr")
+          .querySelector("td:nth-last-child(1)").textContent = basicCount;
+      });
+    });
   }
 }
 // BUTTON RATING
 document.querySelector(".saveButton").addEventListener("click", function () {
   document.querySelectorAll("tbody tr").forEach((tr) => {
     tr.querySelectorAll("td:nth-last-child(1)").forEach((td) => {
-      let endTotalScore = td.querySelector("span").textContent;
-      tr.style.order = endTotalScore;
+      tr.style.order = td.textContent;
     });
   });
   document.querySelector("tbody").style.flexDirection = "column-reverse";
